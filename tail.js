@@ -14,6 +14,11 @@ const tail = function(array) {
   return tail;
 };
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); 
+const assertArray = function(array1, array2) {
+  for (let i = 0; i < array1; i++) {
+    assertEqual(array1[i], array2[i]);
+  }
+};
+
+const result = tail(["Hello", "Lighthouse", "Labs"]);
+assertArray(result, ["Lighthouse", "Labs"]);
